@@ -212,11 +212,24 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(250, 246, 241, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--clr-cream);
   border-bottom: 1px solid rgba(184, 169, 154, 0.15);
   transition: all var(--transition);
+}
+
+@supports (backdrop-filter: blur(16px)) {
+  .site-header {
+    background: rgba(250, 246, 241, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+/* Remove backdrop-filter when nav is open to fix mobile fixed positioning */
+.site-header.nav-open {
+  background: var(--clr-cream);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .site-header.scrolled {
@@ -250,6 +263,12 @@ img {
   font-family: var(--ff-serif);
   font-size: var(--fs-md);
   letter-spacing: -0.01em;
+}
+
+/* Nav */
+.main-nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav-list {
@@ -297,6 +316,7 @@ img {
   color: white !important;
 }
 
+
 /* Mobile nav toggle */
 .nav-toggle {
   display: none;
@@ -306,6 +326,7 @@ img {
   border: none;
   cursor: pointer;
   padding: 4px;
+  z-index: 1002;
 }
 
 .nav-toggle-bar {
@@ -315,6 +336,19 @@ img {
   background: var(--clr-charcoal);
   border-radius: 2px;
   transition: all var(--transition);
+}
+
+/* Body scroll lock + overlay when nav is open */
+body.nav-is-open {
+  overflow: hidden;
+}
+
+body.nav-is-open::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 40, 36, 0.4);
+  z-index: 1000;
 }
 
 
@@ -967,8 +1001,14 @@ img {
 
   /* Header */
   .site-header {
-    background: rgba(28, 25, 23, 0.85);
+    background: var(--clr-cream);
     border-bottom-color: rgba(45, 40, 36, 0.4);
+  }
+
+  @supports (backdrop-filter: blur(16px)) {
+    .site-header:not(.nav-open) {
+      background: rgba(28, 25, 23, 0.85);
+    }
   }
 
   .site-header.scrolled {
@@ -1030,6 +1070,10 @@ img {
       background: var(--clr-cream);
       box-shadow: -4px 0 30px rgba(0, 0, 0, 0.3);
     }
+  }
+
+  body.nav-is-open::after {
+    background: rgba(0, 0, 0, 0.5);
   }
 
   /* Footer — keep light text on dark, just adjust border */
@@ -1100,11 +1144,12 @@ img {
     bottom: 0;
     width: min(85vw, 360px);
     background: var(--clr-cream);
-    padding: 5rem var(--space-lg) var(--space-lg);
+    padding: 6rem var(--space-lg) var(--space-lg);
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -4px 0 30px rgba(45, 40, 36, 0.1);
-    z-index: 999;
+    box-shadow: -4px 0 30px rgba(45, 40, 36, 0.15);
+    z-index: 1001;
+    overflow-y: auto;
   }
 
   .main-nav.is-open {

@@ -5,18 +5,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ── Sticky header scroll state ──
   const header = document.getElementById("site-header");
-  let lastScroll = 0;
 
   window.addEventListener(
     "scroll",
     () => {
-      const y = window.scrollY;
-      if (y > 40) {
+      if (window.scrollY > 40) {
         header.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
       }
-      lastScroll = y;
     },
     { passive: true }
   );
@@ -24,35 +21,47 @@ document.addEventListener("DOMContentLoaded", () => {
   // ── Mobile nav toggle ──
   const toggle = document.getElementById("nav-toggle");
   const nav = document.getElementById("main-nav");
+  const bars = toggle ? toggle.querySelectorAll(".nav-toggle-bar") : [];
+
+  function openNav() {
+    nav.classList.add("is-open");
+    header.classList.add("nav-open");
+    document.body.classList.add("nav-is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    bars[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+    bars[1].style.opacity = "0";
+    bars[2].style.transform = "rotate(-45deg) translate(5px, -5px)";
+  }
+
+  function closeNav() {
+    nav.classList.remove("is-open");
+    header.classList.remove("nav-open");
+    document.body.classList.remove("nav-is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    bars[0].style.transform = "";
+    bars[1].style.opacity = "";
+    bars[2].style.transform = "";
+  }
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", open);
+      nav.classList.contains("is-open") ? closeNav() : openNav();
+    });
 
-      // Animate hamburger → X
-      const bars = toggle.querySelectorAll(".nav-toggle-bar");
-      if (open) {
-        bars[0].style.transform = "rotate(45deg) translate(5px, 5px)";
-        bars[1].style.opacity = "0";
-        bars[2].style.transform = "rotate(-45deg) translate(5px, -5px)";
-      } else {
-        bars[0].style.transform = "";
-        bars[1].style.opacity = "";
-        bars[2].style.transform = "";
+    // Close nav when tapping the overlay (body::after)
+    document.addEventListener("click", (e) => {
+      if (
+        document.body.classList.contains("nav-is-open") &&
+        !nav.contains(e.target) &&
+        !toggle.contains(e.target)
+      ) {
+        closeNav();
       }
     });
 
     // Close nav on link click
     nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        const bars = toggle.querySelectorAll(".nav-toggle-bar");
-        bars[0].style.transform = "";
-        bars[1].style.opacity = "";
-        bars[2].style.transform = "";
-      });
+      link.addEventListener("click", closeNav);
     });
   }
 
@@ -74,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animatedEls.forEach((el) => observer.observe(el));
   } else {
-    // Fallback: show everything
     animatedEls.forEach((el) => el.classList.add("is-visible"));
   }
 
