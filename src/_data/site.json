@@ -1,48 +1,40 @@
 {
   "name": "Neuropathways Psychological Services",
-  "tagline": "Your Tagline Here",
-  "phone": "(000) 000-0000",
-  "email": "hello@yourpractice.com",
+  "tagline": "Mapping the Pathways to Well-Being",
+  "phone": "(312) 728-8806",
+  "email": "admin@neuropathwayspsych.com",
   "address": {
-    "street": "123 Your Street, Suite 000",
-    "city": "Your City",
-    "state": "ST",
-    "zip": "00000"
+    "street": "205 N Michigan, Suite 810",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60601"
   },
-  "hours": "Monday – Thursday: 8:00am – 5:00pm | Friday: 8:00am – 1:00pm",
-  "description": "Your practice description goes here. Share your mission, values, and what makes your practice unique.",
-  "heroSubtitle": "Your hero subtitle goes here — a brief, welcoming statement about your approach to care.",
+  "hours": "Monday – Friday: 9:00am – 5:00pm CST",
+  "heroSubtitle": "Evidence-Based Therapy and Psychological & Neuropsychological Assessment",
   "about": {
     "headline": "About Us",
     "text": "Neuropathways Psychological Services is a clinical psychology practice dedicated to understanding the complex connections between brain functioning, emotional wellbeing, and everyday life. Our practice provides evidence-based therapy and comprehensive psychological and neuropsychological evaluations for adolescents and adults seeking greater clarity, support, and personal growth.",
     "text2": "We believe that effective psychological care begins with listening carefully to each person’s story. Our approach is collaborative, compassionate, and grounded in science, with a focus on helping individuals better understand their experiences, strengthen resilience, and develop practical strategies for navigating life’s challenges."
   },
-  "services": [
-    {
-      "title": "Service Title One",
-      "icon": "brain",
-      "description": "A brief description of this service and what patients can expect.",
-      "details": ["Detail one", "Detail two", "Detail three", "Detail four"]
-    },
-    {
-      "title": "Service Title Two",
-      "icon": "focus",
-      "description": "A brief description of this service and what patients can expect.",
-      "details": ["Detail one", "Detail two", "Detail three", "Detail four"]
-    },
-    {
-      "title": "Service Title Three",
-      "icon": "person",
-      "description": "A brief description of this service and what patients can expect.",
-      "details": ["Detail one", "Detail two", "Detail three", "Detail four"]
-    },
-    {
-      "title": "Service Title Four",
-      "icon": "collaborate",
-      "description": "A brief description of this service and what patients can expect.",
-      "details": ["Detail one", "Detail two", "Detail three", "Detail four"]
-    }
-  ],
+  "services": {
+    "serviceList": [
+      {
+        "title": "Therapy",
+        "icon": "brain",
+        "description": "Therapy offers a supportive and collaborative space to explore challenges, gain insight, and develop practical strategies for change. We work with individuals experiencing concerns such as anxiety, depression, stress, trauma, identity development, and life transitions. Our approach integrates evidence-based treatments, including cognitive behavioral therapy (CBT), acceptance and commitment therapy (ACT), and mindfulness-informed strategies, with an emphasis on empathy, collaboration, and individualized care."
+      },
+      {
+        "title": "Psychological Evaluations",
+        "icon": "focus",
+        "description": "Psychological evaluations provide a comprehensive understanding of emotional, behavioral, and psychological functioning. Through clinical interviews, standardized testing, and review of relevant history, these evaluations help clarify diagnoses, identify strengths and areas of difficulty, and guide treatment or support planning. Psychological assessments may be helpful for concerns related to mood and anxiety conditions, personality functioning, and other mental health concerns."
+      },
+      {
+        "title": "Neuropsychological Evaluations",
+        "icon": "person",
+        "description": "Neuropsychological evaluations examine how brain functioning relates to thinking, memory, attention, language, and problem-solving abilities. These assessments are useful for understanding cognitive concerns related to neurological conditions, medical illness, learning differences, attention difficulties, or changes in cognitive functioning. The evaluation process includes a detailed clinical interview, specialized cognitive testing, and a comprehensive report with diagnostic impressions and personalized recommendations to support treatment, academic or workplace functioning, and daily life."
+      }
+    ]
+  },
   "provider": {
     "name": "Dr. First Last, Psy.D.",
     "title": "Licensed Clinical Neuropsychologist",
@@ -51,7 +43,7 @@
   },
   "insurance": {
     "headline": "Insurance & Billing",
-    "text": "Your insurance and billing information goes here. Include details about in-network plans and out-of-network options.",
+    "text": "We accept most major insurance plans and are happy to help you understand your benefits before beginning services. Because coverage can vary depending on your specific plan, we can provide a personalized estimate of expected costs based on your insurance information.\n\nFor individuals without insurance coverage or whose plans are out-of-network, we offer transparent self-pay rates and may provide sliding scale fees when appropriate. Sliding scale fees are adjusted based on financial circumstances in order to help make care more accessible.\n\nIf you have questions about coverage, fees, or payment options, we encourage you to reach out and we will be glad to assist you in understanding your options before scheduling services.",
     "providers": ["Insurance Provider One", "Insurance Provider Two", "Insurance Provider Three", "Insurance Provider Four"]
   },
   "testimonials": [
@@ -66,24 +58,6 @@
     {
       "quote": "Patient testimonial goes here.",
       "author": "— Patient"
-    }
-  ],
-  "faq": [
-    {
-      "question": "Frequently asked question one?",
-      "answer": "Your answer to this question goes here."
-    },
-    {
-      "question": "Frequently asked question two?",
-      "answer": "Your answer to this question goes here."
-    },
-    {
-      "question": "Frequently asked question three?",
-      "answer": "Your answer to this question goes here."
-    },
-    {
-      "question": "Frequently asked question four?",
-      "answer": "Your answer to this question goes here."
     }
   ]
 }

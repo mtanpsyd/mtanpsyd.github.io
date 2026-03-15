@@ -566,7 +566,7 @@ body.nav-is-open::after {
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   border: 1px solid rgba(184, 169, 154, 0.15);
-  transition: all var(--transition);
+  /*transition: all var(--transition);*/
 }
 
 .service-card:hover {
@@ -725,31 +725,31 @@ body.nav-is-open::after {
    INSURANCE
    ═══════════════════════════════════════════ */
 .insurance {
-  background: var(--clr-cream);
+  background: var(--clr-linen);
 }
 
 .insurance-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  /*display: grid;*/
+  /*grid-template-columns: 1fr 1fr;*/
+  /*gap: var(--space-xl);*/
   align-items: center;
 }
 
-.insurance-providers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-}
+/*.insurance-providers {*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+/*  gap: var(--space-sm);*/
+/*}*/
 
-.insurance-badge {
-  font-size: var(--fs-sm);
-  font-weight: 500;
-  color: var(--clr-earth);
-  background: var(--clr-linen);
-  border: 1px solid var(--clr-sand);
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md);
-}
+/*.insurance-badge {*/
+/*  font-size: var(--fs-sm);*/
+/*  font-weight: 500;*/
+/*  color: var(--clr-earth);*/
+/*  background: var(--clr-linen);*/
+/*  border: 1px solid var(--clr-sand);*/
+/*  padding: 0.75rem 1.5rem;*/
+/*  border-radius: var(--radius-md);*/
+/*}*/
 
 
 /* ═══════════════════════════════════════════
@@ -811,10 +811,10 @@ body.nav-is-open::after {
 }
 
 .contact-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  /*flex-direction: column;*/
   gap: var(--space-md);
-  max-width: 40rem;
+  max-width: 42rem;
   margin: 0 auto var(--space-xl);
 }
 
@@ -829,7 +829,7 @@ body.nav-is-open::after {
   padding: var(--space-lg);
   text-align: center;
   text-decoration: none;
-  transition: all var(--transition);
+  /*transition: all var(--transition);*/
 }
 
 .contact-action-card:hover {

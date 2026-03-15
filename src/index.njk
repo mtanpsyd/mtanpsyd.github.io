@@ -10,7 +10,6 @@ title: Home
     <div class="hero-gradient"></div>
   </div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Neuropsychology · Therapy · Assessment</p>
     <h1 class="hero-title">{{ site.tagline }}</h1>
     <p class="hero-subtitle">{{ site.heroSubtitle }}</p>
     <div class="hero-actions">
@@ -55,13 +54,13 @@ title: Home
 <section class="services section" id="services">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">What We Offer</span>
+      {# <span class="section-label">What We Offer</span> #}
       <h2 class="section-title">Our Services</h2>
       <p class="section-subtitle">Every evaluation and session is tailored to your unique needs, guided by the latest research and a deep commitment to your well-being.</p>
     </div>
 
     <div class="services-grid">
-      {% for service in site.services %}
+      {% for service in site.services.serviceList %}
       <article class="service-card" data-animate>
         <div class="service-icon">
           {% if service.icon == "brain" %}
@@ -76,11 +75,11 @@ title: Home
         </div>
         <h3 class="service-title">{{ service.title }}</h3>
         <p class="service-description">{{ service.description }}</p>
-        <ul class="service-details">
+        {# <ul class="service-details">
           {% for detail in service.details %}
           <li>{{ detail }}</li>
           {% endfor %}
-        </ul>
+        </ul> #}
       </article>
       {% endfor %}
     </div>
@@ -117,25 +116,6 @@ title: Home
   </div>
 </section>
 
-{# ───────────────── TESTIMONIALS ───────────────── #}
-<section class="testimonials section" id="testimonials">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Kind Words</span>
-      <h2 class="section-title">What Our Patients Say</h2>
-    </div>
-    <div class="testimonials-grid">
-      {% for testimonial in site.testimonials %}
-      <blockquote class="testimonial-card" data-animate>
-        <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-        <p class="testimonial-text">{{ testimonial.quote }}</p>
-        <cite class="testimonial-author">{{ testimonial.author }}</cite>
-      </blockquote>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
 {# ───────────────── INSURANCE ───────────────── #}
 <section class="insurance section" id="insurance">
   <div class="container">
@@ -145,34 +125,6 @@ title: Home
         <h2 class="section-title">{{ site.insurance.headline }}</h2>
         <p>{{ site.insurance.text }}</p>
       </div>
-      <div class="insurance-providers">
-        {% for provider in site.insurance.providers %}
-        <div class="insurance-badge">{{ provider }}</div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-
-{# ───────────────── FAQ ───────────────── #}
-<section class="faq section" id="faq">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Common Questions</span>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-    </div>
-    <div class="faq-list">
-      {% for item in site.faq %}
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>{{ item.question }}</span>
-          <span class="faq-toggle" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>{{ item.answer }}</p>
-        </div>
-      </details>
-      {% endfor %}
     </div>
   </div>
 </section>
