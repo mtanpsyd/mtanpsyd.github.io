@@ -1,5 +1,5 @@
 {
-  "name": "Your Practice Name",
+  "name": "Neuropathways Psychological Services",
   "tagline": "Your Tagline Here",
   "phone": "(000) 000-0000",
   "email": "hello@yourpractice.com",
@@ -13,9 +13,9 @@
   "description": "Your practice description goes here. Share your mission, values, and what makes your practice unique.",
   "heroSubtitle": "Your hero subtitle goes here — a brief, welcoming statement about your approach to care.",
   "about": {
-    "headline": "Your About Headline",
-    "text": "Your about section text goes here. Describe your practice philosophy, approach, and what patients can expect when they work with you.",
-    "philosophy": "Your care philosophy statement goes here."
+    "headline": "About Us",
+    "text": "Neuropathways Psychological Services is a clinical psychology practice dedicated to understanding the complex connections between brain functioning, emotional wellbeing, and everyday life. Our practice provides evidence-based therapy and comprehensive psychological and neuropsychological evaluations for adolescents and adults seeking greater clarity, support, and personal growth.",
+    "text2": "We believe that effective psychological care begins with listening carefully to each person’s story. Our approach is collaborative, compassionate, and grounded in science, with a focus on helping individuals better understand their experiences, strengthen resilience, and develop practical strategies for navigating life’s challenges."
   },
   "services": [
     {
