@@ -35,12 +35,20 @@
       }
     ]
   },
-  "provider": {
-    "name": "Dr. First Last, Psy.D.",
-    "title": "Licensed Clinical Neuropsychologist",
-    "bio": "Your bio goes here. Include your training background, areas of expertise, and what drives your passion for this work.",
-    "credentials": ["Degree and Institution", "Fellowship or Internship", "State License", "Professional Memberships"]
-  },
+  "providers": [
+    {
+      "name": "Dr. Michelle Tan (she/her)",
+      "title": "Licensed Clinical Psychologist",
+      "bio": "Licensed clinical psychologist providing therapy and comprehensive evaluations for children, adolescents, and adults. Her work focuses on the relationship between brain functioning, emotional wellbeing, and physical health. Her clinical interests include ADHD, autism spectrum disorder, learning disabilities, cognitive changes and neurodegenerative conditions, chronic illness adjustment, aging, and existential concerns.\n\nPrior to starting her own practice, Dr. Tan held leadership and training roles in multidisciplinary clinical settings, where she specialized in psychological and neuropsychological assessment across the lifespan and supervised trainees in assessment and clinical care. She currently is also an Assistant Professor at the Illinois School of Professional Psychology, where she is involved in training and mentoring future psychologists.",
+      "image": "/images/headshots/tan.jpeg"
+    },
+    {
+      "name": "Dr. Adam Hiebel (he/him/his)",
+      "title": "Licensed Clinical Psychologist",
+      "bio": "Licensed clinical psychologist who provides evidence-based psychotherapy and psychological assessment for adolescents and adults. He works with individuals seeking support for concerns such as anxiety, depression, stress, identity development, and life transitions.\n\nDr. Hiebel has a particular interest in supporting LGBTQ+ individuals and adolescents, offering an affirming therapeutic environment where clients can explore their experiences and strengthen resilience.\n\nHis treatment approach is grounded in cognitive behavioral therapy (CBT), helping clients understand the connections between thoughts, emotions, and behaviors while developing practical strategies for meaningful change.",
+      "image": "/images/headshots/hiebel.jpeg"
+    }
+  ],
   "insurance": {
     "headline": "Insurance & Billing",
     "text": "We accept most major insurance plans and are happy to help you understand your benefits before beginning services. Because coverage can vary depending on your specific plan, we can provide a personalized estimate of expected costs based on your insurance information.\n\nFor individuals without insurance coverage or whose plans are out-of-network, we offer transparent self-pay rates and may provide sliding scale fees when appropriate. Sliding scale fees are adjusted based on financial circumstances in order to help make care more accessible.\n\nIf you have questions about coverage, fees, or payment options, we encourage you to reach out and we will be glad to assist you in understanding your options before scheduling services.",

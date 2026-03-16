@@ -26,26 +26,11 @@ title: Home
 {# ───────────────── ABOUT ───────────────── #}
 <section class="about section" id="about">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-image-col">
-        <div class="about-image-frame">
-          <div class="about-image-placeholder">
-            <span class="placeholder-icon">✦</span>
-            <span class="placeholder-text">Practice Photo</span>
-          </div>
-        </div>
-        <div class="about-accent-shape" aria-hidden="true"></div>
-      </div>
-      <div class="about-text-col">
-        {# <span class="section-label">About Us</span> #}
-        <h2 class="section-title">{{ site.about.headline }}</h2>
-        <p class="about-lead">{{ site.about.text }}</p>
-        <p class="about-lead">{{ site.about.text2 }}</p>
-        {# <blockquote class="about-philosophy"> #}
-          {# <p>{{ site.about.philosophy }}</p> #}
-        {# </blockquote> #}
-        <a href="#provider" class="btn btn-outline">Meet Our Team</a>
-      </div>
+    <div class="about-content">
+      <h2 class="section-title">{{ site.about.headline }}</h2>
+      <p class="about-lead">{{ site.about.text }}</p>
+      <p class="about-lead">{{ site.about.text2 }}</p>
+      <a href="#provider" class="btn btn-outline">Meet Our Team</a>
     </div>
   </div>
 </section>
@@ -89,29 +74,34 @@ title: Home
 {# ───────────────── PROVIDER ───────────────── #}
 <section class="provider section" id="provider">
   <div class="container">
-    <div class="provider-grid">
-      <div class="provider-text-col">
-        <span class="section-label">Our Team</span>
-        <h2 class="section-title">{{ site.provider.name }}</h2>
-        <p class="provider-title-text">{{ site.provider.title }}</p>
-        <p class="provider-bio">{{ site.provider.bio }}</p>
-        <ul class="provider-credentials">
-          {% for cred in site.provider.credentials %}
-          <li>
-            <span class="cred-bullet">✦</span>
-            {{ cred }}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="provider-image-col">
-        <div class="provider-image-frame">
-          <div class="provider-image-placeholder">
-            <span class="placeholder-icon">✦</span>
-            <span class="placeholder-text">Provider Headshot</span>
+    <div class="section-header">
+      <h2 class="section-title">Meet Our Providers</h2>
+    </div>
+
+    <div class="providers-grid">
+      {% for provider in site.providers %}
+      <div class="provider-card">
+        <div class="provider-header">
+          <div class="provider-image-frame">
+            {% if provider.image %}
+            <img src="{{ provider.image }}" alt="{{ provider.name }}">
+            {% else %}
+            <div class="provider-image-placeholder">
+              <span class="placeholder-icon">✦</span>
+              <span class="placeholder-text">Provider Headshot</span>
+            </div>
+            {% endif %}
+          </div>
+          <div class="provider-header-text">
+            <h3 class="provider-name">{{ provider.name }}</h3>
+            <p class="provider-title-text">{{ provider.title }}</p>
           </div>
         </div>
+        <div class="provider-content">
+          <p class="provider-bio">{{ provider.bio }}</p>
+        </div>
       </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -121,7 +111,6 @@ title: Home
   <div class="container">
     <div class="insurance-grid">
       <div class="insurance-text">
-        <span class="section-label">Coverage</span>
         <h2 class="section-title">{{ site.insurance.headline }}</h2>
         <p>{{ site.insurance.text }}</p>
       </div>
@@ -133,7 +122,6 @@ title: Home
 <section class="contact section" id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Get in Touch</span>
       <h2 class="section-title">We'd Love to Hear from You</h2>
       <p class="section-subtitle">Ready to take the next step? Reach out to schedule an appointment or ask a question. We're here to help.</p>
     </div>
