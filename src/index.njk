@@ -10,7 +10,6 @@ title: Home
     <div class="hero-gradient"></div>
   </div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Neuropsychology · Therapy · Assessment</p>
     <h1 class="hero-title">{{ site.tagline }}</h1>
     <p class="hero-subtitle">{{ site.heroSubtitle }}</p>
     <div class="hero-actions">
@@ -27,25 +26,11 @@ title: Home
 {# ───────────────── ABOUT ───────────────── #}
 <section class="about section" id="about">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-image-col">
-        <div class="about-image-frame">
-          <div class="about-image-placeholder">
-            <span class="placeholder-icon">✦</span>
-            <span class="placeholder-text">Practice Photo</span>
-          </div>
-        </div>
-        <div class="about-accent-shape" aria-hidden="true"></div>
-      </div>
-      <div class="about-text-col">
-        <span class="section-label">About Us</span>
-        <h2 class="section-title">{{ site.about.headline }}</h2>
-        <p class="about-lead">{{ site.about.text }}</p>
-        <blockquote class="about-philosophy">
-          <p>{{ site.about.philosophy }}</p>
-        </blockquote>
-        <a href="#provider" class="btn btn-outline">Meet Our Team</a>
-      </div>
+    <div class="about-content">
+      <h2 class="section-title">{{ site.about.headline }}</h2>
+      <p class="about-lead">{{ site.about.text }}</p>
+      <p class="about-lead">{{ site.about.text2 }}</p>
+      <a href="#provider" class="btn btn-outline">Meet Our Team</a>
     </div>
   </div>
 </section>
@@ -54,13 +39,13 @@ title: Home
 <section class="services section" id="services">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">What We Offer</span>
+      {# <span class="section-label">What We Offer</span> #}
       <h2 class="section-title">Our Services</h2>
       <p class="section-subtitle">Every evaluation and session is tailored to your unique needs, guided by the latest research and a deep commitment to your well-being.</p>
     </div>
 
     <div class="services-grid">
-      {% for service in site.services %}
+      {% for service in site.services.serviceList %}
       <article class="service-card" data-animate>
         <div class="service-icon">
           {% if service.icon == "brain" %}
@@ -75,11 +60,11 @@ title: Home
         </div>
         <h3 class="service-title">{{ service.title }}</h3>
         <p class="service-description">{{ service.description }}</p>
-        <ul class="service-details">
+        {# <ul class="service-details">
           {% for detail in service.details %}
           <li>{{ detail }}</li>
           {% endfor %}
-        </ul>
+        </ul> #}
       </article>
       {% endfor %}
     </div>
@@ -89,47 +74,33 @@ title: Home
 {# ───────────────── PROVIDER ───────────────── #}
 <section class="provider section" id="provider">
   <div class="container">
-    <div class="provider-grid">
-      <div class="provider-text-col">
-        <span class="section-label">Our Team</span>
-        <h2 class="section-title">{{ site.provider.name }}</h2>
-        <p class="provider-title-text">{{ site.provider.title }}</p>
-        <p class="provider-bio">{{ site.provider.bio }}</p>
-        <ul class="provider-credentials">
-          {% for cred in site.provider.credentials %}
-          <li>
-            <span class="cred-bullet">✦</span>
-            {{ cred }}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="provider-image-col">
-        <div class="provider-image-frame">
-          <div class="provider-image-placeholder">
-            <span class="placeholder-icon">✦</span>
-            <span class="placeholder-text">Provider Headshot</span>
+    <div class="section-header">
+      <h2 class="section-title">Meet Our Providers</h2>
+    </div>
+
+    <div class="providers-grid">
+      {% for provider in site.providers %}
+      <div class="provider-card">
+        <div class="provider-header">
+          <div class="provider-image-frame">
+            {% if provider.image %}
+            <img src="{{ provider.image }}" alt="{{ provider.name }}">
+            {% else %}
+            <div class="provider-image-placeholder">
+              <span class="placeholder-icon">✦</span>
+              <span class="placeholder-text">Provider Headshot</span>
+            </div>
+            {% endif %}
+          </div>
+          <div class="provider-header-text">
+            <h3 class="provider-name">{{ provider.name }}</h3>
+            <p class="provider-title-text">{{ provider.title }}</p>
           </div>
         </div>
+        <div class="provider-content">
+          <p class="provider-bio">{{ provider.bio }}</p>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-{# ───────────────── TESTIMONIALS ───────────────── #}
-<section class="testimonials section" id="testimonials">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Kind Words</span>
-      <h2 class="section-title">What Our Patients Say</h2>
-    </div>
-    <div class="testimonials-grid">
-      {% for testimonial in site.testimonials %}
-      <blockquote class="testimonial-card" data-animate>
-        <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-        <p class="testimonial-text">{{ testimonial.quote }}</p>
-        <cite class="testimonial-author">{{ testimonial.author }}</cite>
-      </blockquote>
       {% endfor %}
     </div>
   </div>
@@ -140,38 +111,9 @@ title: Home
   <div class="container">
     <div class="insurance-grid">
       <div class="insurance-text">
-        <span class="section-label">Coverage</span>
         <h2 class="section-title">{{ site.insurance.headline }}</h2>
         <p>{{ site.insurance.text }}</p>
       </div>
-      <div class="insurance-providers">
-        {% for provider in site.insurance.providers %}
-        <div class="insurance-badge">{{ provider }}</div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-
-{# ───────────────── FAQ ───────────────── #}
-<section class="faq section" id="faq">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Common Questions</span>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-    </div>
-    <div class="faq-list">
-      {% for item in site.faq %}
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>{{ item.question }}</span>
-          <span class="faq-toggle" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>{{ item.answer }}</p>
-        </div>
-      </details>
-      {% endfor %}
     </div>
   </div>
 </section>
@@ -180,7 +122,6 @@ title: Home
 <section class="contact section" id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Get in Touch</span>
       <h2 class="section-title">We'd Love to Hear from You</h2>
       <p class="section-subtitle">Ready to take the next step? Reach out to schedule an appointment or ask a question. We're here to help.</p>
     </div>
