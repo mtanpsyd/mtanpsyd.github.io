@@ -1199,7 +1199,11 @@ body.nav-is-open::after {
   }
 
   .contact-actions {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .contact-action-card {
+    width: 100%;
   }
 
   .services-grid {
